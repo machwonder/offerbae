@@ -1,0 +1,32 @@
+# Settings for Backend (on Cloud Run).
+# See https://firebase.google.com/docs/app-hosting/configure#cloud-run
+runConfig:
+  minInstances: 0
+
+# Environment variables and secrets.
+env:
+  # NEXT_PUBLIC_ variables are exposed to the client-side browser.
+  - variable: NEXT_PUBLIC_GA_TRACKING_ID
+    value: 'G-XXXXXXXXXX'
+  - variable: NEXT_PUBLIC_SITE_URL
+    value: 'https://offerbae.com'
+
+  # --- IMPORTANT ---
+  # For production, it is strongly recommended to use Cloud Secret Manager for sensitive data.
+  # The `secret` field below expects the NAME of the secret you created in Google Cloud Secret Manager.
+  # DO NOT paste the actual secret value here.
+  #
+  # Example:
+  # 1. Create a secret in Secret Manager named `my-rakuten-client-id`.
+  # 2. In this file, change the line to:
+  #    secret: my-rakuten-client-id
+  #
+  # See https://firebase.google.com/docs/app-hosting/configure#secret-parameters
+  - variable: OFFERBAE_RAKUTEN_CLIENT_ID
+    secret: offerbae-rakuten-client-id
+  - variable: OFFERBAE_RAKUTEN_CLIENT_SECRET
+    secret: offerbae-rakuten-client-secret
+  - variable: OFFERBAE_RAKUTEN_REFRESH_TOKEN
+    secret: offerbae-rakuten-refresh-token
+  - variable: OFFERBAE_RAKUTEN_ACCOUNT_ID
+    secret: offerbae-rakuten-account-id

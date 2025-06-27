@@ -1,0 +1,147 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%; /* Lighter than whitesmoke */
+    --foreground: 220 4% 17%; /* Black */
+    --card: 0 0% 100%;
+    --card-foreground: 220 4% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 4% 17%;
+    --primary: 218 80% 35%; /* Blue */
+    --primary-foreground: 216 89% 92%; /* Light Blue */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 218 80% 35%;
+    --muted: 0 0% 91%;
+    --accent: 221 89% 64%; /* Medium Blue */
+    --accent-foreground: 0 0% 98%;
+    --destructive: 5 82% 57%; /* Medium Red */
+    --destructive-foreground: 0 0% 98%;
+    --success: 145 58% 49%; /* Medium Green */
+    --warning: 45 97% 50%; /* Yellow */
+    --orange: 26 100% 45%; /* Orange */
+    --border: 0 0% 88%;
+    --input: 0 0% 91%;
+    --ring: 221 89% 64%; /* Medium Blue */
+    --radius: 0.5rem;
+    --chart-1: 221 89% 64%; /* Medium Blue */
+    --chart-2: 145 58% 49%; /* Medium Green */
+    --chart-3: 45 97% 50%; /* Yellow */
+    --chart-4: 5 82% 57%; /* Medium Red */
+    --chart-5: 26 100% 45%; /* Orange */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 4% 13%;
+    --foreground: 210 17% 95%;
+    --card: 220 4% 17%;
+    --card-foreground: 210 17% 95%;
+    --popover: 220 4% 13%;
+    --popover-foreground: 210 17% 95%;
+    --primary: 221 89% 64%;
+    --primary-foreground: 218 80% 20%;
+    --secondary: 220 4% 20%;
+    --secondary-foreground: 216 89% 92%;
+    --muted: 220 4% 20%;
+    --accent: 221 89% 64%;
+    --accent-foreground: 220 4% 17%;
+    --destructive: 5 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 145 58% 49%;
+    --warning: 45 97% 50%;
+    --orange: 26 100% 45%;
+    --border: 220 4% 30%;
+    --input: 220 4% 25%;
+    --ring: 221 89% 64%;
+    --chart-1: 221 89% 64%;
+    --chart-2: 145 58% 49%;
+    --chart-3: 45 97% 50%;
+    --chart-4: 5 82% 57%;
+    --chart-5: 26 100% 45%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .theme-admin {
+    --background: 210 17% 95%;
+    --foreground: 220 4% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 4% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 4% 17%;
+    --primary: 218 80% 35%;
+    --primary-foreground: 216 89% 92%;
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 218 80% 35%;
+    --muted: 210 17% 90%;
+    --accent: 216 89% 92%;
+    --accent-foreground: 218 80% 35%;
+    --destructive: 5 82% 57%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 145 58% 49%;
+    --warning: 45 97% 50%;
+    --orange: 26 100% 45%;
+    --border: 210 17% 88%;
+    --input: 210 17% 90%;
+    --ring: 218 80% 35%;
+  }
+
+  .dark.theme-admin {
+    --background: 220 4% 13%;
+    --foreground: 210 17% 95%;
+    --card: 220 4% 17%;
+    --card-foreground: 210 17% 95%;
+    --popover: 220 4% 13%;
+    --popover-foreground: 210 17% 95%;
+    --primary: 221 89% 64%;
+    --primary-foreground: 218 80% 35%;
+    --secondary: 220 4% 22%;
+    --secondary-foreground: 210 17% 95%;
+    --muted: 220 4% 22%;
+    --accent: 220 4% 22%;
+    --accent-foreground: 210 17% 95%;
+    --destructive: 0 87% 35%;
+    --destructive-foreground: 5 85% 88%;
+    --border: 220 4% 30%;
+    --input: 220 4% 25%;
+    --ring: 221 89% 64%;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-foreground;
+    background-color: hsl(var(--card));
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: linear-gradient(to bottom right, hsl(var(--card)), whitesmoke);
+  }
+}
