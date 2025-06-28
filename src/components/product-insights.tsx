@@ -63,7 +63,7 @@ export default function ProductInsights() {
         const result: ProductInsightResult = await searchAllProducts(values);
 
         if ('error' in result) {
-          setError(result.error);
+          // setError(result.error);
           toast({
             variant: "destructive",
             title: "Error fetching insights",
