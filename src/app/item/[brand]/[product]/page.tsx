@@ -60,7 +60,6 @@ export async function generateMetadata(
         },
         ...previousImages,
       ],
-      type: 'product',
     },
   };
 }
