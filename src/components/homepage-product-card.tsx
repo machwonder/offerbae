@@ -28,7 +28,7 @@ export default function HomepageProductCard({ product }: HomepageProductCardProp
     const currency = getCurrencySymbol(product.price?.['@_currency']);
     const isOnSale = !!(regularPrice && salePrice && salePrice > 0 && salePrice < regularPrice);
     
-    const urlForLogo = product.advertiserUrl || getDomainFromName(product.merchantname);
+    const urlForLogo = product.advertiserUrl;
     const logoUrl = getLogoUrl(urlForLogo);
 
     return (
