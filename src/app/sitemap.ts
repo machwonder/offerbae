@@ -38,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         productResult.productSearchResponse.item.forEach(product => {
             productRoutes.push({
                 url: `${siteUrl}/item/${slugify(product.merchantname)}/${slugify(product.productname)}-${product.linkid}`,
-                lastModified: new Date(product.createdon),
+                // lastModified: new Date(product.createdon),
                  changeFrequency: 'weekly',
                  priority: 0.5
             });
